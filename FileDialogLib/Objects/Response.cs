@@ -1,7 +1,4 @@
-﻿using GameArchiveLib;
-using GameDataLib;
-
-namespace FileDialogLib.Objects
+﻿namespace FileDialogLib.Objects
 {
     public class Response
     {
@@ -14,13 +11,13 @@ namespace FileDialogLib.Objects
             ValidData = validData;
         }
 
-        public Response(bool validData, GameData gameData)
+        public Response(bool validData, object gameData)
         {
             ValidData = validData;
-            GameData = gameData;
+            Data = gameData;
         }
 
-        public GameData GameData { get; set; }
+        public object Data { get; set; }
         public bool ValidData { get; set; }
         public string DirectoryPath { get; set; }
     }
