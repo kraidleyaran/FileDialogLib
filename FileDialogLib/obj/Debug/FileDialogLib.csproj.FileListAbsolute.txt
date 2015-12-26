@@ -21,3 +21,4 @@ C:\Users\Alex\Documents\Visual Studio 2013\Projects\FileDialogLib\FileDialogLib\
 C:\Users\Alex\Documents\Visual Studio 2013\Projects\FileDialogLib\FileDialogLib\bin\Debug\SharpDX.RawInput.dll
 C:\Users\Alex\Documents\Visual Studio 2013\Projects\FileDialogLib\FileDialogLib\bin\Debug\SharpDX.Direct3D9.dll
 C:\Users\Alex\Documents\Visual Studio 2013\Projects\FileDialogLib\FileDialogLib\bin\Debug\MonoGame.Framework.xml
+C:\Users\Alex\Documents\Visual Studio 2013\Projects\FileDialogLib\FileDialogLib\bin\Debug\GameGraphicsLib.pdb

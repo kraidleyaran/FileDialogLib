@@ -118,6 +118,7 @@
     <Content Include="ExternalRefs\GameArchiveLib.dll" />
     <Content Include="ExternalRefs\GameDataLib.dll" />
     <Content Include="ExternalRefs\GameGraphicsLib.dll" />
+    <Content Include="ExternalRefs\GameGraphicsLib.pdb" />
     <Content Include="ExternalRefs\GameObjectLib.dll" />
     <Content Include="ExternalRefs\GameObserverLib.dll" />
     <Content Include="ExternalRefs\Messaging.dll" />

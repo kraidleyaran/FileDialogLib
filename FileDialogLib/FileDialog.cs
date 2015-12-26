@@ -7,16 +7,17 @@ namespace FileDialogLib
 {
     public class GameFileDialog
     {
+        
         public GameFileDialog()
         {
-            
+            InitialDirectory = @"C:\";
         }
-
+        public string InitialDirectory { get; set; }
         public Response LoadFile()
         {
             Response returnResponse = new Response(false);
             // TODO: Add in default path that can be set
-            using (OpenFileDialog openFileDialog = new OpenFileDialog { InitialDirectory = @"C:\", Filter = "GameCraft Data Files (*.gcd)|*.gcd|All Files (*.*)|*.*" })
+            using (OpenFileDialog openFileDialog = new OpenFileDialog { InitialDirectory = InitialDirectory, Filter = "GameCraft Data Files (*.gcd)|*.gcd|All Files (*.*)|*.*" })
             {
                 switch (openFileDialog.ShowDialog())
                 {
@@ -35,7 +36,7 @@ namespace FileDialogLib
         {
             Response returnResponse = new Response(false);
             // TODO: Add in default path that can be set
-            using (OpenFileDialog openFileDialog = new OpenFileDialog { InitialDirectory = @"C:\", Filter = "GameCraft " + name + " Data Files (*." + extension + ")|*." + extension})
+            using (OpenFileDialog openFileDialog = new OpenFileDialog { InitialDirectory = InitialDirectory, Filter = "GameCraft " + name + " Data Files (*." + extension + ")|*." + extension })
             {
                 switch (openFileDialog.ShowDialog())
                 {
@@ -54,7 +55,7 @@ namespace FileDialogLib
         public Response SaveFile<DataType>(DataType gameData)
         {
             Response returnResponse = new Response();
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog {InitialDirectory = @"C:\", Filter = "GameCraft Data Files (*.gcd)|*.gcd|All Files (*.*)|*.*"})
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog { InitialDirectory = InitialDirectory, Filter = "GameCraft Data Files (*.gcd)|*.gcd|All Files (*.*)|*.*" })
             {
                 switch (saveFileDialog.ShowDialog())
                 {
@@ -69,11 +70,13 @@ namespace FileDialogLib
             }
             return returnResponse;
         }
-        public Response SaveFile<DataType>(DataType gameData, string extension, string name)
+        public Response SaveFile<DataType>(DataType gameData, string extension, string name, string defaultFileName)
         {
             Response returnResponse = new Response();
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog { InitialDirectory = @"C:\", Filter = "GameCraft " + name + " Data Files (*."+ extension + ")|*." + extension})
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog { InitialDirectory = InitialDirectory, Filter = "GameCraft " + name + " Data Files (*." + extension + ")|*." + extension })
             {
+                saveFileDialog.FileName = defaultFileName + "." + extension;
+                
                 switch (saveFileDialog.ShowDialog())
                 {
                     case DialogResult.OK:
